@@ -5,7 +5,7 @@ import pygame
 import tkinter as tk
 from tkinter import ttk
 from random import randint
-from time import sleep
+import time
 import zmq
 
 
@@ -15,13 +15,36 @@ class Cajero():
 
         # Importar sonidos
 
-        #pygame.init()
-        #pygame.mixer.init()
-        #self.intro = pygame.mixer.Sound ("intro2.mp3")
-        #pygame.mixer.Sound.play(self.intro) 
-        #self.espera = pygame.mixer.Sound ("espera.mp3") #  de sonido
-        #self.escena = pygame.mixer.Sound ("escena.mp3")
-        #self.boton = pygame.mixer.Sound ("boton.mp3")
+        # Inciar pygame.init()
+        pygame.mixer.init()
+
+        self.intro = pygame.mixer.Sound ("intro.mp3")
+        pygame.mixer.Sound.play(self.intro) 
+        """Sonido de inicio al abrir el programa,
+        este se ejecuta al principio y da un sonido
+        de bienvenida"""
+
+        pygame.mixer.music.load ("espera.mp3") 
+        pygame.mixer.music.play(-1)
+        pygame.mixer.music.set_volume(0.1)
+        """Sonido de espera, al abrir el programa,
+        este se ejecuta al principio y funciona
+        como bucle infinito, hasta que el usuario
+        cierre la ventana"""
+
+        self.boton = pygame.mixer.Sound ("boton.mp3")
+        pygame.mixer.Sound.play(self.boton)
+        """Sonido perteneciente a los botones
+        funciona solamente cuando el usuario ejecuta
+        una determinada función"""
+
+        time.sleep(3)
+        self.escena = pygame.mixer.Sound ("bienvenida.mp3")
+        pygame.mixer.Sound.play(self.escena) 
+        """Sonido de de bienvenida, al abrir el programa,
+        este se ejecuta al principio y da un mensaje de 
+        bienvenida a los clientes y da indicaciones"""
+
 
         # Contexto. Conectar socket
 
