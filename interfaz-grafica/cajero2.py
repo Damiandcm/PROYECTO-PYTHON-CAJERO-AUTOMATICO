@@ -257,6 +257,21 @@ class Cajero():
         self.text_usuario.place(x = 120, y = 100)
         self.text_usuario.config(fg = '#003333', bg = 'deepskyblue', font=('Libre-Baskerville', 12), bd = 4, relief='solid')
 
+        # Texto: Fondos iniciales
+
+        self.text_fondos_in = tk.Label(self.pantalla, text='Fondos iniciales')
+        self.text_fondos_in.place(x=135, y=180)
+        self.text_fondos_in.config(fg = '#003333', bg = 'deepskyblue', font=('Libre-Baskerville', 12), bd = 4, relief='solid')
+
+        # Texto: Nota: Fondos minimos
+
+        self.text_nota_minimo = tk.Label(
+            self.pantalla, 
+            text='NOTA: Para poder crear una cuenta nescecita iniciala\ncon un minimo de 5000 Colones'
+        )
+            self.text_nota_minimo.place(x=30, y=280)
+            self.text_nota_minimo.config(fg = '#003333', bg = 'deepskyblue', font=('Libre-Baskerville', 12), bd = 4, relief='solid')
+
         # Puntero: Continuar
 
         self.puntero_continuar_reg = tk.Label(
@@ -287,6 +302,47 @@ class Cajero():
         self.boton_up1.config(
             command = lambda: self.volver_inicio('registrar'))
 
+        # Texto/entrada: Entrada de numeros desde teclado numerico
+
+        self.caja_numeros = tk.Label(self.pantalla, width=20, height=2)
+        self.caja_numeros.grid_propagate(False)
+        self.caja_numeros.place(x=96, y=220)
+
+        # Habilitar botones under. Teclado numerico
+
+        self.habilitar_numerico()
+
+    def habilitar_numerico(self):
+
+        # Habilitar teclado numerico
+
+        self.saldo_inicial = ''
+
+        self.boton_under1.config(command=lambda: self.ten_num('1', 'Registro'))
+        self.boton_under2.config(command=lambda: self.ten_num('2', 'Registro'))
+        self.boton_under3.config(command=lambda: self.ten_num('3', 'Registro'))
+        self.boton_under4.config(command=lambda: self.ten_num('4', 'Registro'))
+        self.boton_under5.config(command=lambda: self.ten_num('5', 'Registro'))
+        self.boton_under6.config(command=lambda: self.ten_num('6', 'Registro'))
+        self.boton_under7.config(command=lambda: self.ten_num('7', 'Registro'))
+        self.boton_under8.config(command=lambda: self.ten_num('8', 'Registro'))
+        self.boton_under9.config(command=lambda: self.ten_num('9', 'Registro'))
+        self.boton_under10.config(command=lambda: self.ten_num('', 'Registro', True))
+        self.boton_under11.config(command=lambda: self.ten_num('0', 'Registro'))
+        self.boton_under12.config(command=self.agregar_usuario)
+    
+    def tec_num(self, numero, objetivo, borrar=False):
+
+        # Escribir en pantalla lo seleccionado en el tecclado numerico
+
+        if borrar:
+            self.saldo_inicial = ''
+        self.saldo_inicial += numero
+
+        if objetivo == 'Registro':
+            self.caja_numeros.config(text=self.saldo_inicial)
+
+
     def volver_inicio(self, pantalla):
 
         if pantalla == 'agregar_usuario':
@@ -310,6 +366,9 @@ class Cajero():
             self.puntero_continuar_reg.destroy()
             self.text_usuario.destroy()
             self.text_registro.destroy()
+            self.text_fondos_in.destroy()
+            self.caja_numeros.destroy()
+            self.text_nota_minimo.destroy()
 
             # Destruir entrys
 
@@ -319,16 +378,36 @@ class Cajero():
 
             self.boton_up1.config(command = self.desavilitar_boton)
             self.boton_up5.config(command = self.desavilitar_boton)
+            self.desavilitar_teclado_num()
 
         # volver a inicio
 
         self.inicio()
+
+    def desavilitar_teclado_num(self):
+
+        # Desavilitar teclado numerico
+
+        self.boton_under1.config(command=self.desavilitar_boton)
+        self.boton_under2.config(command=self.desavilitar_boton)
+        self.boton_under3.config(command=self.desavilitar_boton)
+        self.boton_under4.config(command=self.desavilitar_boton)
+        self.boton_under5.config(command=self.desavilitar_boton)
+        self.boton_under6.config(command=self.desavilitar_boton)
+        self.boton_under7.config(command=self.desavilitar_boton)
+        self.boton_under8.config(command=self.desavilitar_boton)
+        self.boton_under9.config(command=self.desavilitar_boton)
+        self.boton_under10.config(command=self.desavilitar_boton)
+        self.boton_under11.config(command=self.desavilitar_boton)
+        self.boton_under12.config(command=self.desavilitar_boton)
+
 
     def agregar_usuario(self):
 
         # Desavilitar botones
 
         self.boton_up5.config(command = self.desavilitar_boton)
+        self.desavilitar_teclado_num()
 
         # Actualizar boton Atras
 
@@ -340,56 +419,63 @@ class Cajero():
         self.text_registro.destroy()
         self.text_usuario.destroy()
         self.puntero_continuar_reg.destroy()
+        self.text_fondos_in.destroy()
+        self.caja_numeros.destroy()
+        self.text_nota_minimo.destroy()
 
         # Destruir Entry
 
         self.entrada_usuario.destroy()
 
         # Optener Nombre de usuario:
+        try:
+            saldo_inicial = int(self.saldo_inicial)
+            if ' ' not in self.usuario.get() and self.usuario.get() != '' and saldo_inicial >= 5000:
 
-        if ' ' not in self.usuario.get() and self.usuario.get() != '':
-            # self.socket.send_string('Registrar/' + self.usuario.get())
-            # self.mensaje = self.socket.recv().decode('utf-8')
+                # self.socket.send_string('Registrar/' + self.usuario.get())
+                # self.mensaje = self.socket.recv().decode('utf-8')
 
-            # Conteseña
+                # Conteseña
 
-            contra = str(randint(1000, 9999))
+                contra = str(randint(1000, 9999))
 
-            # Labals
+                # Labels
 
-            # Texto registro exitoso
+                # Texto registro exitoso
 
-            self.text_registro_exitoso = tk.Label(
-                self.pantalla,
-                text = 'Registro Exitoso\nDebe recordar los siguientes '
-                'datos\npara poder iniciar seción')
-            self.text_registro_exitoso.place(x = 40, y = 100)
-            self.text_registro_exitoso.config(
-                fg = '#003333', bg = '#ACACAC', font = 40)
+                self.text_registro_exitoso = tk.Label(
+                    self.pantalla,
+                    text = 'Registro Exitoso\nDebe recordar los siguientes '
+                    'datos\npara poder iniciar seción')
+                self.text_registro_exitoso.place(x = 40, y = 100)
+                self.text_registro_exitoso.config(
+                    fg = '#003333', bg = '#ACACAC', font = 40)
 
-            # Texto nombre de usuario
+                # Texto nombre de usuario
 
-            self.text_nuevo_usuario = tk.Label(
-                self.pantalla, text = 'Nombre de usuario: {}'.format(
-                    self.usuario.get()))
-            self.text_nuevo_usuario.place(x = 30, y = 200)
-            self.text_nuevo_usuario.config(
-                fg = '#003333', bg = '#ACACAC', font = 40)
+                self.text_nuevo_usuario = tk.Label(
+                    self.pantalla, text = 'Nombre de usuario: {}'.format(
+                        self.usuario.get()))
+                self.text_nuevo_usuario.place(x = 30, y = 200)
+                self.text_nuevo_usuario.config(
+                    fg = '#003333', bg = '#ACACAC', font = 40)
 
-            # Texto contraseña
+                # Texto contraseña
 
-            self.text_contra = tk.Label(
-                self.pantalla, text = 'Contraseña: {}'.format(contra))
-            self.text_contra.place(x = 30, y = 250)
-            self.text_contra.config(fg = '#003333', bg = '#ACACAC', font = 40)
+                self.text_contra = tk.Label(
+                    self.pantalla, text = 'Contraseña: {}'.format(contra))
+                self.text_contra.place(x = 30, y = 250)
+                self.text_contra.config(fg = '#003333', bg = '#ACACAC', font = 40)
 
-            # Guardar datos en el servidor 
+                # Guardar datos en el servidor 
 
-            self.socket.send_string('{}/{}/{}'.format('Registrar', self.usuario.get(), contra))
-            message = self.socket.recv().decode("utf-8")
-            
+                self.socket.send_string('{}/{}/{}/{}'.format('Registrar', self.usuario.get(), contra), self.saldo_inicial)
+                message = self.socket.recv().decode("utf-8")
+                
 
-        else:
+            else:
+                self.registrar()
+        except ValueError:
             self.registrar()
 
     def desavilitar_boton(self):
