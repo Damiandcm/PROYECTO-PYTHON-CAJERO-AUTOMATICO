@@ -223,6 +223,7 @@ class Cajero():
         self.boton_up8.config(command = self.ventana.destroy)
 
         # Boton: Para registrar un nuevo usuario:
+
         self.boton_up1.config(command = self.registrar)
 
         # mainloop
@@ -248,19 +249,19 @@ class Cajero():
         # Texto: Registrarse
 
         self.text_registro = tk.Label(self.pantalla, text = '▶ REGISTRARSE ◀') 
-        self.text_registro.place(x = 97, y = 190)
+        self.text_registro.place(x = 113, y = 60)
         self.text_registro.config(fg = '#003333', bg = 'deepskyblue', font=('Libre-Baskerville', 12), bd = 4, relief='solid')
 
         # Texto: Nombre de usuario
 
-        self.text_usuario = tk.Label(self.pantalla, text = 'Nombre de usuario')
-        self.text_usuario.place(x = 120, y = 100)
+        self.text_usuario = tk.Label(self.pantalla, text = 'Nombre de usuario: ')
+        self.text_usuario.place(x = 5, y = 100)
         self.text_usuario.config(fg = '#003333', bg = 'deepskyblue', font=('Libre-Baskerville', 12), bd = 4, relief='solid')
 
         # Texto: Fondos iniciales
 
-        self.text_fondos_in = tk.Label(self.pantalla, text='Fondos iniciales')
-        self.text_fondos_in.place(x=135, y=180)
+        self.text_fondos_in = tk.Label(self.pantalla, text='Fondos iniciales: ')
+        self.text_fondos_in.place(x=5, y=180)
         self.text_fondos_in.config(fg = '#003333', bg = 'deepskyblue', font=('Libre-Baskerville', 12), bd = 4, relief='solid')
 
         # Texto: Nota: Fondos minimos
@@ -269,14 +270,14 @@ class Cajero():
             self.pantalla, 
             text='NOTA: Para poder crear una cuenta nescecita iniciala\ncon un minimo de 5000 Colones'
         )
-            self.text_nota_minimo.place(x=30, y=280)
-            self.text_nota_minimo.config(fg = '#003333', bg = 'deepskyblue', font=('Libre-Baskerville', 12), bd = 4, relief='solid')
+        self.text_nota_minimo.place(x=13, y=280)
+        self.text_nota_minimo.config(fg = '#003333', bg = 'deepskyblue', font=('Libre-Baskerville', 10), bd = 4, relief='solid')
 
         # Puntero: Continuar
 
         self.puntero_continuar_reg = tk.Label(
             self.pantalla, text = 'Continuar  ↦')
-        self.puntero_continuar_reg.place(x = 270, y = 31)
+        self.puntero_continuar_reg.place(x = 263, y = 25)
         self.puntero_continuar_reg.config(fg = '#003333', bg = 'deepskyblue', font=('Libre-Baskerville', 12), bd = 4, relief='solid')
 
         # Entry: Nombre de usuario
@@ -290,7 +291,7 @@ class Cajero():
         # Puntero: Atras
 
         self.puntero_atras_reg = tk.Label(self.pantalla, text = '↤  Atras')
-        self.puntero_atras_reg.place(x = 10, y = 31)
+        self.puntero_atras_reg.place(x = 5, y = 25)
         self.puntero_atras_reg.config(fg = '#003333', bg = 'deepskyblue', font=('Libre-Baskerville', 12), bd = 4, relief='solid')
 
         # Boton: Continuar. Agregar usuario
@@ -306,7 +307,7 @@ class Cajero():
 
         self.caja_numeros = tk.Label(self.pantalla, width=20, height=2)
         self.caja_numeros.grid_propagate(False)
-        self.caja_numeros.place(x=96, y=220)
+        self.caja_numeros.place(x=112, y=220)
 
         # Habilitar botones under. Teclado numerico
 
@@ -318,17 +319,17 @@ class Cajero():
 
         self.saldo_inicial = ''
 
-        self.boton_under1.config(command=lambda: self.ten_num('1', 'Registro'))
-        self.boton_under2.config(command=lambda: self.ten_num('2', 'Registro'))
-        self.boton_under3.config(command=lambda: self.ten_num('3', 'Registro'))
-        self.boton_under4.config(command=lambda: self.ten_num('4', 'Registro'))
-        self.boton_under5.config(command=lambda: self.ten_num('5', 'Registro'))
-        self.boton_under6.config(command=lambda: self.ten_num('6', 'Registro'))
-        self.boton_under7.config(command=lambda: self.ten_num('7', 'Registro'))
-        self.boton_under8.config(command=lambda: self.ten_num('8', 'Registro'))
-        self.boton_under9.config(command=lambda: self.ten_num('9', 'Registro'))
-        self.boton_under10.config(command=lambda: self.ten_num('', 'Registro', True))
-        self.boton_under11.config(command=lambda: self.ten_num('0', 'Registro'))
+        self.boton_under1.config(command=lambda: self.tec_num('1', 'Registro'))
+        self.boton_under2.config(command=lambda: self.tec_num('2', 'Registro'))
+        self.boton_under3.config(command=lambda: self.tec_num('3', 'Registro'))
+        self.boton_under4.config(command=lambda: self.tec_num('4', 'Registro'))
+        self.boton_under5.config(command=lambda: self.tec_num('5', 'Registro'))
+        self.boton_under6.config(command=lambda: self.tec_num('6', 'Registro'))
+        self.boton_under7.config(command=lambda: self.tec_num('7', 'Registro'))
+        self.boton_under8.config(command=lambda: self.tec_num('8', 'Registro'))
+        self.boton_under9.config(command=lambda: self.tec_num('9', 'Registro'))
+        self.boton_under10.config(command=lambda: self.tec_num('', 'Registro', True))
+        self.boton_under11.config(command=lambda: self.tec_num('0', 'Registro'))
         self.boton_under12.config(command=self.agregar_usuario)
     
     def tec_num(self, numero, objetivo, borrar=False):
@@ -469,7 +470,7 @@ class Cajero():
 
                 # Guardar datos en el servidor 
 
-                self.socket.send_string('{}/{}/{}/{}'.format('Registrar', self.usuario.get(), contra), self.saldo_inicial)
+                self.socket.send_string('{}/{}/{}/{}'.format('Registrar', self.usuario.get(), contra, self.saldo_inicial))
                 message = self.socket.recv().decode("utf-8")
                 
 
