@@ -1,12 +1,13 @@
 #!/usr/bin/python3
 
 import json
-import pygame
+import pygame, sys, time
 import tkinter as tk
-from tkinter import ttk
-from random import randint
 import time
 import zmq
+from pygame.locals import *
+from tkinter import ttk
+from random import randint
 
 
 class Cajero():
@@ -16,15 +17,17 @@ class Cajero():
         # Importar sonidos
 
         # Inciar pygame.init()
-        pygame.mixer.init()
 
-        self.intro = pygame.mixer.Sound ("intro.mp3")
-        pygame.mixer.Sound.play(self.intro) 
+        pygame.init()
+        pygame.mixer.init()
+        
+        self.intro = pygame.mixer.music.load("inicio.mp3")
+        pygame.mixer.music.play() 
         """Sonido de inicio al abrir el programa,
         este se ejecuta al principio y da un sonido
         de bienvenida"""
 
-        pygame.mixer.music.load ("espera.mp3") 
+        pygame.mixer.music.load("espera.mp3") 
         pygame.mixer.music.play(-1)
         pygame.mixer.music.set_volume(0.1)
         """Sonido de espera, al abrir el programa,
@@ -32,15 +35,15 @@ class Cajero():
         como bucle infinito, hasta que el usuario
         cierre la ventana"""
 
-        self.boton = pygame.mixer.Sound ("boton.mp3")
-        pygame.mixer.Sound.play(self.boton)
+        self.boton = pygame.mixer.music.load("boton.mp3")
+        pygame.mixer.music.play()
         """Sonido perteneciente a los botones
         funciona solamente cuando el usuario ejecuta
         una determinada función"""
 
         time.sleep(3)
-        self.escena = pygame.mixer.Sound ("bienvenida.mp3")
-        pygame.mixer.Sound.play(self.escena) 
+        self.escena = pygame.mixer.music.load("bienvenida.mp3")
+        pygame.mixer.music.play() 
         """Sonido de de bienvenida, al abrir el programa,
         este se ejecuta al principio y da un mensaje de 
         bienvenida a los clientes y da indicaciones"""
