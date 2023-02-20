@@ -6,12 +6,13 @@ Integrantes:
 3. Steven Gerardo Chacón Salazar -  C12023
 
 El presente repositorio corresponde a la creación de un sistema de cajero automático, el cual por medio de sockets es capaz
-de almacenar información en un servidor local, el usuario tiene la posibilidad de realizar diferentes acciones:
+de almacenar información en un servidor, el usuario tiene la posibilidad de realizar diferentes acciones:
 
-1) Depositar y retirar fondos de la cuenta cliente.
-2) Consultar los fondos e información de la cuenta cliente.
-3) Mostrar el estado de movimiento de la cuenta cliente.
-4) Información del cliente.
+1) Depositar fondos a la cuenta cliente.
+2) Retirar fondos a la cuenta cliente.
+2) Consultar de la cuenta cliente.
+3) Registrarse
+4) iniciar sesion
 5) Salir
 
 
@@ -33,24 +34,14 @@ Respecto a las funciones integradas:
 -El cliente tiene la posibilidad de depositar o retirar fondos de su cuenta bancaria, en este caso el servidor que almacena los datos recibe la solicitud hecha por el usuario y ejecuta la función correspondiente. Si el usuario deposita fondos, el servidor almacena la cantidad de fondos depositada y la guarda en su cuenta cliente, de otro modo si el usuario retira fondos, el servidor extrae los fondos de los datos almacenados y se verá reflejado como un rebajo en la cuenta.
 
 
-2) Consultar los fondos e información de la cuenta cliente.
+2) Consultar los fondos.
 
--EL cliente puede consultar los fondos de su cuenta, también como su información cuenta, en este caso el programa accede a los datos almacenados en el servidor y muestra la información solicitada en pantalla.
-
-
-3) Mostrar el estado de movimiento de la cuenta cliente.
-
--En caso de que el cliente lo desee, puede consultar los movimientos realizados en su cuenta y el programa refleja en pantalla los movimientos almacenados en el servidor ya sea que haya depositado o retirado fondos.
+-EL cliente puede consultar los fondos de su cuenta, en este caso el programa accede a los datos almacenados en el servidor y muestra la información solicitada en pantalla.
 
 
-4) Información del cliente.
+3) Salir
 
--EL cliente puede consultar la información personal, de esta manera el programa muestra la información que se encuentra en el servidor respecto a la información del cliente.
-
-
-5) Salir
-
--El programa tiene la capacidad si el usuario lo desea de poder salir del programa de cajero al presionar un botón, en este caso el programa se cierra.
+-El programa tiene la capacidad si el usuario lo desea de poder salir del programa de cajero al presionar un botón.
 
 
 
@@ -107,4 +98,3 @@ sudo apt install python3-json
 1. INTERFAZ GRAFICA DE USUARIO  
 2. SERVIDOR
 3. EJEMPLO DE SERVIDOR
-4. ARCHIVO_JSON
