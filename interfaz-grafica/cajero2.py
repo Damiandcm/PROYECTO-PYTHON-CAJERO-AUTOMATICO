@@ -1,8 +1,9 @@
 #!/usr/bin/python3
 
 import json
-import pygame
+import pygame, sys, time
 import tkinter as tk
+from pygame.locals import *
 from tkinter import ttk
 from random import randint
 from time import sleep
@@ -15,13 +16,42 @@ class Cajero():
 
         # Importar sonidos
 
-        #pygame.init()
-        #pygame.mixer.init()
-        #self.intro = pygame.mixer.Sound ("intro2.mp3")
-        #pygame.mixer.Sound.play(self.intro) 
-        #self.espera = pygame.mixer.Sound ("espera.mp3") #  de sonido
-        #self.escena = pygame.mixer.Sound ("escena.mp3")
-        #self.boton = pygame.mixer.Sound ("boton.mp3")
+        # Inciar pygame.init()
+
+        pygame.init()
+        pygame.mixer.init()
+
+        self.intro = pygame.mixer.music.load("y2mate.com - sonido de inicio de windows 7.mp3")
+        pygame.mixer.music.play() 
+        """Sonido de inicio al abrir el programa,
+        este se ejecuta al principio y da un sonido
+        de bienvenida"""
+
+        pygame.mixer.music.load("espera.mp3") 
+        pygame.mixer.music.play(-1)
+        pygame.mixer.music.set_volume(0.1)
+
+        """Sonido de espera, al abrir el programa,
+        este se ejecuta al principio y funciona
+        como bucle infinito, hasta que el usuario
+        cierre la ventana"""
+
+        self.boton = pygame.mixer.music.load("boton.mp3")
+        pygame.mixer.music.play()
+
+        """Sonido perteneciente a los botones
+        funciona solamente cuando el usuario ejecuta
+        una determinada función"""
+
+        time.sleep(3)
+
+        self.escena = pygame.mixer.music.load("bienvenida.mp3")
+        pygame.mixer.music.play() 
+
+        """Sonido de de bienvenida, al abrir el programa,
+        este se ejecuta al principio y da un mensaje de 
+        bienvenida a los clientes y da indicaciones"""
+
 
         # Contexto. Conectar socket
 
