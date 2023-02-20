@@ -15,16 +15,13 @@ class Cajero():
 `   Clase cajero, se encarga de producir la interfas y todas sus funciones
     """
 
-
     def __init__(self):
-
         """
         Constructor de cajero. Crea la configuracion fisica del cajero.
-        Reproduce sonidos de inicio y bienbenida 
+        Reproduce sonidos de inicio y bienbenida
         """
 
         # Contexto. Conectar socket
-
         self.context = zmq.Context()
         self.socket = self.context.socket(zmq.REQ)
         self.socket.connect('tcp://10.0.2.4:5555')
@@ -36,131 +33,131 @@ class Cajero():
         self.ventana.title('Cajero automático')
         self.ventana.resizable(False, False)
         self.ventana.config(
-            bg = 'black',
-            highlightbackground= 'deepskyblue', highlightthickness = 2
+            bg='black',
+            highlightbackground='deepskyblue', highlightthickness=2
         )
 
         # Botones arriba
 
         # Boton 1
 
-        self.boton_up1 = tk.Button(self.ventana, width = 4, height = 2)
-        self.boton_up1.grid(row = 0, column = 0, padx = 10, pady = 10)
-        self.boton_up1.config(bg = 'deepskyblue', bd = 7)
+        self.boton_up1 = tk.Button(self.ventana, width=4, height=2)
+        self.boton_up1.grid(row=0, column=0, padx=10, pady=10)
+        self.boton_up1.config(bg='deepskyblue', bd=7)
 
         # Boton 2
 
-        self.boton_up2 = tk.Button(self.ventana, width = 4, height = 2)
-        self.boton_up2.grid(row = 1, column = 0, padx = 10, pady = 10)
-        self.boton_up2.config(bg = 'deepskyblue', bd = 7)
+        self.boton_up2 = tk.Button(self.ventana, width=4, height=2)
+        self.boton_up2.grid(row=1, column=0, padx=10, pady=10)
+        self.boton_up2.config(bg='deepskyblue', bd=7)
 
         # Boton 3
 
-        self.boton_up3 = tk.Button(self.ventana, width = 4, height = 2)
-        self.boton_up3.grid(row = 2, column = 0, padx = 10, pady = 10)
-        self.boton_up3.config(bg = 'deepskyblue', bd = 7)
+        self.boton_up3 = tk.Button(self.ventana, width=4, height=2)
+        self.boton_up3.grid(row=2, column=0, padx=10, pady=10)
+        self.boton_up3.config(bg='deepskyblue', bd=7)
 
         # Boton 4
 
-        self.boton_up4 = tk.Button(self.ventana, width = 4, height = 2)
-        self.boton_up4.grid(row = 3, column = 0, padx = 10, pady = 10)
-        self.boton_up4.config(bg = 'deepskyblue', bd = 7)
+        self.boton_up4 = tk.Button(self.ventana, width=4, height=2)
+        self.boton_up4.grid(row=3, column=0, padx=10, pady=10)
+        self.boton_up4.config(bg='deepskyblue', bd=7)
 
         # Pantalla del cajero
 
-        self.pantalla = tk.Frame(self.ventana, width = 400, height = 400)
+        self.pantalla = tk.Frame(self.ventana, width=400, height=400)
         self.pantalla.grid_propagate(False)
-        self.pantalla.config(bg = 'dodgerblue4')
-        self.pantalla.grid(row = 0, column = 1, columnspan = 21, rowspan = 4)
-        self.pantalla.config(bd = 10)
+        self.pantalla.config(bg='dodgerblue4')
+        self.pantalla.grid(row=0, column=1, columnspan=21, rowspan=4)
+        self.pantalla.config(bd=10)
         self.pantalla.config(relief='ridge')
         self.pantalla.config(cursor="dot")
 
         # Boton 5
 
-        self.boton_up5 = tk.Button(self.ventana, width = 4, height = 2)
-        self.boton_up5.grid(row = 0, column = 22, padx = 10, pady = 10)
-        self.boton_up5.config(bg = 'deepskyblue', bd = 7)
+        self.boton_up5 = tk.Button(self.ventana, width=4, height=2)
+        self.boton_up5.grid(row=0, column=22, padx=10, pady=10)
+        self.boton_up5.config(bg='deepskyblue', bd=7)
 
         # Boton 6
 
-        self.boton_up6 = tk.Button(self.ventana, width = 4, height = 2)
-        self.boton_up6.grid(row = 1, column = 22, padx = 10, pady = 10)
-        self.boton_up6.config(bg = 'deepskyblue', bd = 7)
+        self.boton_up6 = tk.Button(self.ventana, width=4, height=2)
+        self.boton_up6.grid(row=1, column=22, padx=10, pady=10)
+        self.boton_up6.config(bg='deepskyblue', bd=7)
 
         # Boton 7
 
-        self.boton_up7 = tk.Button(self.ventana, width = 4, height = 2)
-        self.boton_up7.grid(row = 2, column = 22, padx = 10, pady = 10)
-        self.boton_up7.config(bg = 'deepskyblue', bd = 7)
+        self.boton_up7 = tk.Button(self.ventana, width=4, height=2)
+        self.boton_up7.grid(row=2, column=22, padx=10, pady=10)
+        self.boton_up7.config(bg='deepskyblue', bd=7)
 
         # Boton 8
 
-        self.boton_up8 = tk.Button(self.ventana, width = 4, height = 2)
-        self.boton_up8.grid(row = 3, column = 22, padx = 10, pady = 10)
-        self.boton_up8.config(bg = 'deepskyblue', bd = 7)
+        self.boton_up8 = tk.Button(self.ventana, width=4, height=2)
+        self.boton_up8.grid(row=3, column=22, padx=10, pady=10)
+        self.boton_up8.config(bg='deepskyblue', bd=7)
 
         # Botones por debajo
 
         self.boton_under1 = tk.Button(
-            self.ventana, text = '1', width = 4, height = 2)
-        self.boton_under1.grid(row = 7, column = 10,  pady = 5)
-        self.boton_under1.config(bg='deepskyblue', bd = 5, cursor="spider")
+            self.ventana, text='1', width=4, height=2)
+        self.boton_under1.grid(row=7, column=10,  pady=5)
+        self.boton_under1.config(bg='deepskyblue', bd=5, cursor="spider")
 
         self.boton_under2 = tk.Button(
-            self.ventana, text = '2', width = 4, height = 2)
-        self.boton_under2.grid(row = 7, column = 11, pady = 5)
-        self.boton_under2.config(bg='deepskyblue', bd = 5, cursor="spider")
+            self.ventana, text='2', width=4, height=2)
+        self.boton_under2.grid(row=7, column=11, pady=5)
+        self.boton_under2.config(bg='deepskyblue', bd=5, cursor="spider")
 
         self.boton_under3 = tk.Button(
-            self.ventana, text = '3', width = 4, height = 2)
-        self.boton_under3.grid(row = 7, column = 12,  pady = 5)
-        self.boton_under3.config(bg='deepskyblue', bd = 5, cursor="spider")
+            self.ventana, text='3', width=4, height=2)
+        self.boton_under3.grid(row=7, column=12,  pady=5)
+        self.boton_under3.config(bg='deepskyblue', bd=5, cursor="spider")
 
         self.boton_under4 = tk.Button(
-            self.ventana, text = '4', width = 4, height = 2)
-        self.boton_under4.grid(row = 6, column = 10,  pady = 5)
-        self.boton_under4.config(bg='deepskyblue', bd = 5, cursor="spider")
+            self.ventana, text='4', width=4, height=2)
+        self.boton_under4.grid(row=6, column=10,  pady=5)
+        self.boton_under4.config(bg='deepskyblue', bd=5, cursor="spider")
 
         self.boton_under5 = tk.Button(
-            self.ventana, text = '5', width = 4, height = 2)
-        self.boton_under5.grid(row = 6, column = 11, pady = 5)
-        self.boton_under5.config(bg='deepskyblue', bd = 5, cursor="spider")
+            self.ventana, text='5', width=4, height=2)
+        self.boton_under5.grid(row=6, column=11, pady=5)
+        self.boton_under5.config(bg='deepskyblue', bd=5, cursor="spider")
 
         self.boton_under6 = tk.Button(
-            self.ventana, text = '6', width = 4, height = 2)
-        self.boton_under6.grid(row = 6, column = 12, pady = 5)
-        self.boton_under6.config(bg='deepskyblue', bd = 5, cursor="spider")
+            self.ventana, text='6', width=4, height=2)
+        self.boton_under6.grid(row=6, column=12, pady=5)
+        self.boton_under6.config(bg='deepskyblue', bd=5, cursor="spider")
 
         self.boton_under7 = tk.Button(
-            self.ventana, text = '7', width = 4, height = 2)
+            self.ventana, text='7', width=4, height=2)
         self.boton_under7.grid(row=5, column=10, pady=5)
-        self.boton_under7.config(bg='deepskyblue', bd = 5, cursor="spider")
+        self.boton_under7.config(bg='deepskyblue', bd=5, cursor="spider")
 
         self.boton_under8 = tk.Button(
-            self.ventana, text = '8', width = 4, height = 2)
+            self.ventana, text='8', width=4, height=2)
         self.boton_under8.grid(row=5, column=11, pady=5)
         self.boton_under8.config(bg='deepskyblue', bd=5, cursor="spider")
 
         self.boton_under9 = tk.Button(
-            self.ventana, text = '9', width = 4, height = 2)
-        self.boton_under9.grid(row = 5, column = 12, pady = 5)
-        self.boton_under9.config(bg='deepskyblue', bd = 5, cursor="spider")
+            self.ventana, text='9', width=4, height=2)
+        self.boton_under9.grid(row=5, column=12, pady=5)
+        self.boton_under9.config(bg='deepskyblue', bd=5, cursor="spider")
 
         self.boton_under10 = tk.Button(
-            self.ventana, text = '❌', width = 4, height = 2)
-        self.boton_under10.grid(row = 8, column = 10, pady = 5)
-        self.boton_under10.config(bg='deepskyblue', bd = 5, cursor="spider")
+            self.ventana, text='❌', width=4, height=2)
+        self.boton_under10.grid(row=8, column=10, pady=5)
+        self.boton_under10.config(bg='deepskyblue', bd=5, cursor="spider")
 
         self.boton_under11 = tk.Button(
-            self.ventana, text = '0', width = 4, height = 2)
-        self.boton_under11.grid(row = 8, column = 11, pady = 5)
-        self.boton_under11.config(bg='deepskyblue', bd = 5, cursor="spider")
+            self.ventana, text='0', width=4, height=2)
+        self.boton_under11.grid(row=8, column=11, pady=5)
+        self.boton_under11.config(bg='deepskyblue', bd=5, cursor="spider")
 
         self.boton_under12 = tk.Button(
-            self.ventana, text = '✅', width = 4, height = 2)
-        self.boton_under12.grid(row = 8, column = 12, pady = 5)
-        self.boton_under12.config(bg='deepskyblue', bd = 5, cursor="spider")
+            self.ventana, text='✅', width=4, height=2)
+        self.boton_under12.grid(row=8, column=12, pady=5)
+        self.boton_under12.config(bg='deepskyblue', bd=5, cursor="spider")
 
         # Sonido de inicio
 
@@ -169,7 +166,6 @@ class Cajero():
         # Sonido bienvenida
 
         self.sonidos('Bienvenida')
-
 
     def sonidos(self, sonido):
 
@@ -193,7 +189,7 @@ class Cajero():
 
             intro = pygame.mixer.music.load(
                 'y2mate.com - sonido de inicio de windows 7.mp3')
-            pygame.mixer.music.play(2) 
+            pygame.mixer.music.play(2)
 
             time.sleep(1.2)
 
@@ -204,8 +200,7 @@ class Cajero():
 
             escena = pygame.mixer.music.load('bienvenida.mp3')
             pygame.mixer.music.play(0)
-            pygame.mixer.music.set_volume(0.1)
-
+            pygame.mixer.music.set_volume(0.5)
 
         elif sonido == 'Espera':
 
@@ -214,10 +209,9 @@ class Cajero():
             # como bucle infinito, hasta que el usuario
             # cierre la ventana:
 
-            pygame.mixer.music.load('espera.mp3') 
+            pygame.mixer.music.load('espera.mp3')
             pygame.mixer.music.play(-1)
-            pygame.mixer.music.set_volume(0.02)
-
+            pygame.mixer.music.set_volume(0.1)
 
     def inicio(self):
 
@@ -227,49 +221,49 @@ class Cajero():
 
         # Texto: Bienvenida
 
-        self.bienvenida = tk.Label(self.pantalla, text = '▶ Bienvenidos ◀')
-        self.bienvenida.place(x = 100, y = 180)
+        self.bienvenida = tk.Label(self.pantalla, text='▶ Bienvenidos ◀')
+        self.bienvenida.place(x=100, y=180)
         self.bienvenida.config(
-            fg = '#003333', bg = 'deepskyblue',
-            font=('Libre-Baskerville', 18), bd = 4, relief='solid')
+            fg='#003333', bg='deepskyblue',
+            font=('Libre-Baskerville', 18), bd=4, relief='solid')
 
         # Texto: Registrarse
 
         self.puntero_registrarse = tk.Label(
-            self.pantalla, text = '↤  Registrarse')
-        self.puntero_registrarse.place(x = 5, y = 25)
+            self.pantalla, text='↤  Registrarse')
+        self.puntero_registrarse.place(x=5, y=25)
         self.puntero_registrarse.config(
-            fg = '#003333', bg = 'deepskyblue',
-            font=('Libre-Baskerville', 14), bd = 4, relief='solid')
+            fg='#003333', bg='deepskyblue',
+            font=('Libre-Baskerville', 14), bd=4, relief='solid')
 
         # Texto: Iniciar seción
 
         self.puntero_iniciar_secion = tk.Label(
-            self.pantalla, text = 'Iniciar Sesión  ↦')
-        self.puntero_iniciar_secion.place(x = 213, y = 25)
+            self.pantalla, text='Iniciar Sesión  ↦')
+        self.puntero_iniciar_secion.place(x=213, y=25)
         self.puntero_iniciar_secion.config(
-            fg = '#003333', bg = 'deepskyblue',
-            font=('Libre-Baskerville', 14), bd = 4, relief='solid')
+            fg='#003333', bg='deepskyblue',
+            font=('Libre-Baskerville', 14), bd=4, relief='solid')
 
         # Texto: Salir
 
-        self.puntero_salir = tk.Label(self.pantalla, text = 'Salir ↦')
-        self.puntero_salir.place(x = 302, y = 325)
+        self.puntero_salir = tk.Label(self.pantalla, text='Salir ↦')
+        self.puntero_salir.place(x=302, y=325)
         self.puntero_salir.config(
-            fg = '#003333', bg = 'red',
-            font=('Libre-Baskerville', 14), bd = 4, relief='solid')
+            fg='#003333', bg='red',
+            font=('Libre-Baskerville', 14), bd=4, relief='solid')
 
         # Boton: Para salir
 
-        self.boton_up8.config(command = self.ventana.destroy)
+        self.boton_up8.config(command=self.ventana.destroy)
 
         # Boton: Para registrar un nuevo usuario:
 
-        self.boton_up1.config(command = self.registrar)
+        self.boton_up1.config(command=self.registrar)
 
         # Boton para iniciar secion
 
-        self.boton_up5.config(command = self.iniciar_sesion)
+        self.boton_up5.config(command=self.iniciar_sesion)
 
         # mainloop
 
@@ -279,7 +273,7 @@ class Cajero():
 
         """
         Metodo que se encarga de destuir la pantalla "Inicio"
-        y mostrar la pantalla registrar 
+        y mostrar la pantalla registrar
         """
 
         # Destruir Labels
@@ -295,29 +289,29 @@ class Cajero():
 
         # Deshabilitar botones
 
-        self.boton_up1.config(command = self.deshabilitar_boton)
-        self.boton_up8.config(command = self.deshabilitar_boton)
+        self.boton_up1.config(command=self.deshabilitar_boton)
+        self.boton_up8.config(command=self.deshabilitar_boton)
 
         # Nueva página
 
         # Texto: Registrarse
 
         self.text_registro = tk.Label(
-            self.pantalla, text = '▶ REGISTRARSE ◀') 
-        self.text_registro.place(x = 113, y = 60)
+            self.pantalla, text='▶ REGISTRARSE ◀')
+        self.text_registro.place(x=113, y=60)
         self.text_registro.config(
-            fg = '#003333', bg = 'deepskyblue',
-            font=('Libre-Baskerville', 12), bd = 4, relief='solid')
+            fg='#003333', bg='deepskyblue',
+            font=('Libre-Baskerville', 12), bd=4, relief='solid')
 
         # Texto: Nombre de usuario
 
         self.text_usuario = tk.Label(
-            self.pantalla, text = 'Nombre de usuario: ')
+            self.pantalla, text='Nombre de usuario: ')
 
-        self.text_usuario.place(x = 5, y = 100)
+        self.text_usuario.place(x=5, y=100)
         self.text_usuario.config(
-            fg = '#003333', bg = 'deepskyblue',
-            font=('Libre-Baskerville', 12), bd = 4, relief='solid')
+            fg='#003333', bg='deepskyblue',
+            font=('Libre-Baskerville', 12), bd=4, relief='solid')
 
         # Texto: Fondos iniciales
 
@@ -325,53 +319,53 @@ class Cajero():
             self.pantalla, text='Fondos iniciales: ')
         self.text_fondos_in.place(x=5, y=180)
         self.text_fondos_in.config(
-            fg = '#003333', bg = 'deepskyblue',
-            font=('Libre-Baskerville', 12), bd = 4, relief='solid')
+            fg='#003333', bg='deepskyblue',
+            font=('Libre-Baskerville', 12), bd=4, relief='solid')
 
         # Texto: Nota: Fondos minimos
 
         self.text_nota_minimo = tk.Label(
-            self.pantalla, 
+            self.pantalla,
             text='NOTA: Para poder crear una cuenta nescecita'
             ' iniciala\ncon un minimo de 5000 Colones')
         self.text_nota_minimo.place(x=13, y=280)
         self.text_nota_minimo.config(
-            fg = '#003333', bg = 'deepskyblue',
-            font=('Libre-Baskerville', 10), bd = 4, relief='solid')
+            fg='#003333', bg='deepskyblue',
+            font=('Libre-Baskerville', 10), bd=4, relief='solid')
 
         # Puntero: Continuar
 
         self.puntero_continuar_reg = tk.Label(
-            self.pantalla, text = 'Continuar  ↦')
-        self.puntero_continuar_reg.place(x = 263, y = 25)
+            self.pantalla, text='Continuar  ↦')
+        self.puntero_continuar_reg.place(x=263, y=25)
         self.puntero_continuar_reg.config(
-            fg = '#003333', bg = 'deepskyblue',
-            font=('Libre-Baskerville', 12), bd = 4, relief='solid')
+            fg='#003333', bg='deepskyblue',
+            font=('Libre-Baskerville', 12), bd=4, relief='solid')
 
         # Entry: Nombre de usuario
 
         self.usuario = tk.StringVar()
         self.entrada_usuario = tk.Entry(
-            self.pantalla, textvariable = self.usuario)
-        self.entrada_usuario.place(x = 90, y = 140)
-        self.entrada_usuario.config(bg = 'white', font = 60)
+            self.pantalla, textvariable=self.usuario)
+        self.entrada_usuario.place(x=90, y=140)
+        self.entrada_usuario.config(bg='white', font=60)
 
         # Puntero: Atras
 
-        self.puntero_atras = tk.Label(self.pantalla, text = '↤  Atras')
-        self.puntero_atras.place(x = 5, y = 25)
+        self.puntero_atras = tk.Label(self.pantalla, text='↤  Atras')
+        self.puntero_atras.place(x=5, y=25)
         self.puntero_atras.config(
-            fg = '#003333', bg = 'deepskyblue',
-            font=('Libre-Baskerville', 12), bd = 4, relief='solid')
+            fg='#003333', bg='deepskyblue',
+            font=('Libre-Baskerville', 12), bd=4, relief='solid')
 
         # Boton: Continuar. Agregar usuario
 
-        self.boton_up5.config(command = self.agregar_usuario)
+        self.boton_up5.config(command=self.agregar_usuario)
 
         # Boton: Atras
 
         self.boton_up1.config(
-            command = lambda: self.volver_inicio('registrar'))
+            command=lambda: self.volver_inicio('registrar'))
 
         # Texto/entrada: Entrada de numeros desde teclado numerico
 
@@ -399,56 +393,75 @@ class Cajero():
 
         # Deshabilitar botones
 
-        self.boton_up5.config(command = self.deshabilitar_boton)
-        self.boton_up8.config(command = self.deshabilitar_boton)
+        self.boton_up5.config(command=self.deshabilitar_boton)
+        self.boton_up8.config(command=self.deshabilitar_boton)
         self.boton_up1.config(command=self.deshabilitar_boton)
 
         # Nueva página
 
         # Texto: Iniciar sesion
 
-        self.text_iniciar_sesion = tk.Label(self.pantalla, text = 'Iniciar sesión')
-        self.text_iniciar_sesion.place(x = 130, y = 80)
-        self.text_iniciar_sesion.config(fg = '#003333', bg = 'deepskyblue', font=('Libre-Baskerville', 13), bd = 4, relief='solid')
+        self.text_iniciar_sesion = tk.Label(
+            self.pantalla, text='Iniciar sesión'
+        )
+        self.text_iniciar_sesion.place(x=130, y=80)
+        self.text_iniciar_sesion.config(
+            fg='#003333', bg='deepskyblue', font=('Libre-Baskerville', 13),
+            bd=4, relief='solid'
+        )
 
         # Texto: Nombre de usuario
 
-        self.text_usuario_ini = tk.Label(self.pantalla, text = 'Nombre de usuario: ')
-        self.text_usuario_ini.place(x = 5, y = 120)
-        self.text_usuario_ini.config(fg = '#003333', bg = 'deepskyblue', font=('Libre-Baskerville', 12), bd = 4, relief='solid')
+        self.text_usuario_ini = tk.Label(
+            self.pantalla, text='Nombre de usuario: '
+        )
+        self.text_usuario_ini.place(x=5, y=120)
+        self.text_usuario_ini.config(
+            fg='#003333', bg='deepskyblue',
+            font=('Libre-Baskerville', 12), bd=4, relief='solid'
+        )
 
         # Texto: Contraseña
 
-        self.text_contra_ini = tk.Label(self.pantalla, text = 'Contraseña: ')
-        self.text_contra_ini.place(x = 5, y = 200)
-        self.text_contra_ini.config(fg = '#003333', bg = 'deepskyblue', font=('Libre-Baskerville', 12), bd = 4, relief='solid')
+        self.text_contra_ini = tk.Label(self.pantalla, text='Contraseña: ')
+        self.text_contra_ini.place(x=5, y=200)
+        self.text_contra_ini.config(
+            fg='#003333', bg='deepskyblue',
+            font=('Libre-Baskerville', 12), bd=4, relief='solid'
+        )
 
         # Puntero: Continuar
 
         self.puntero_continuar_ini = tk.Label(
-            self.pantalla, text = 'Continuar  →')
-        self.puntero_continuar_ini.place(x = 263, y = 25)
-        self.puntero_continuar_ini.config(fg = '#003333', bg = 'deepskyblue', font=('Libre-Baskerville', 12), bd = 4, relief='solid')
+            self.pantalla, text='Continuar  →')
+        self.puntero_continuar_ini.place(x=263, y=25)
+        self.puntero_continuar_ini.config(
+            fg='#003333', bg='deepskyblue',
+            font=('Libre-Baskerville', 12), bd=4, relief='solid'
+        )
 
         # Entry: Nombre de usuario
 
         self.usuario_ini = tk.StringVar()
         self.entrada_usuario_ini = tk.Entry(
-            self.pantalla, textvariable = self.usuario_ini)
-        self.entrada_usuario_ini.place(x = 87, y = 160)
-        self.entrada_usuario_ini.config(bg = 'white', font = 60)
+            self.pantalla, textvariable=self.usuario_ini)
+        self.entrada_usuario_ini.place(x=87, y=160)
+        self.entrada_usuario_ini.config(bg='white', font=60)
 
         # Texto/Entrada: Contraseña del usuario
 
         self.contra_ini = tk.Label(self.pantalla, width=20, height=2)
         self.contra_ini.grid_propagate(False)
-        self.contra_ini.place(x = 112, y = 240)
+        self.contra_ini.place(x=112, y=240)
 
         # Puntero: Atras
 
-        self.puntero_atras = tk.Label(self.pantalla, text = '↤  Atras')
-        self.puntero_atras.place(x = 5, y = 25)
-        self.puntero_atras.config(fg = '#003333', bg = 'deepskyblue', font=('Libre-Baskerville', 12), bd = 4, relief='solid')
+        self.puntero_atras = tk.Label(self.pantalla, text='↤  Atras')
+        self.puntero_atras.place(x=5, y=25)
+        self.puntero_atras.config(
+            fg='#003333', bg='deepskyblue',
+            font=('Libre-Baskerville', 12), bd=4, relief='solid'
+        )
 
         # Boton: Continuar. Continuar con el menú
 
@@ -457,34 +470,34 @@ class Cajero():
         # Boton: Atras
 
         self.boton_up1.config(
-            command = lambda: self.volver_inicio('Inicio_sesion'))
+            command=lambda: self.volver_inicio('Inicio_sesion'))
 
         # Habilitar botones under. Teclado numerico
 
         self.habilitar_numerico('Inicio')
 
-    
     def leer_datos(self):
 
         """
-        Metodo que se encarga de enviar datos de inicio de sesion al servidor, 
+        Metodo que se encarga de enviar datos de inicio de sesion al servidor,
         el cual responde si los datos enviados son validos o no
         """
-        
+
         # Comunicarse con el servidor
 
-        self.socket.send_string('{}/{}/{}'.format('inicio sesion', self.usuario_ini.get(), self.contra_inicio))
+        self.socket.send_string('{}/{}/{}'.format(
+            'inicio sesion', self.usuario_ini.get(), self.contra_inicio)
+        )
 
         mensaje = self.socket.recv().decode('utf-8')
 
         self.acceso(mensaje)
-        
 
     def acceso(self, tipo_acceso):
 
         """
         Metodo que se encarga de destruir la pantalla 'inicio sesion'
-        y muestra la pantalla 'menu' o una pantalla de error 
+        y muestra la pantalla 'menu' o una pantalla de error
         """
 
         # Acceso al banco
@@ -518,67 +531,70 @@ class Cajero():
         self.deshabilitar_numerico()
 
         # Nueva página
-        
+
         if tipo_acceso == 'contrasena correcta':
 
             # Ir al menu
 
-            self.menu()            
+            self.menu()
 
         elif tipo_acceso == 'contrasena incorrecta':
 
             # Actualizar puntero atras
 
-            self.puntero_atras = tk.Label(self.pantalla, text = '↤  Atras')
+            self.puntero_atras = tk.Label(self.pantalla, text='↤  Atras')
             self.puntero_atras.place(x=5, y=228)
             self.puntero_atras.config(
-                fg = '#003333', bg = 'deepskyblue',
-                font=('Libre-Baskerville', 14), bd = 4, relief='solid')
+                fg='#003333', bg='deepskyblue',
+                font=('Libre-Baskerville', 14), bd=4, relief='solid')
 
             # Actualizar boton atras
 
             self.boton_up3.config(
-                command=lambda: self.volver_inicio_sesion('contrasena incorrecta'))
-            
+                command=lambda: self.volver_inicio_sesion
+                ('contrasena incorrecta')
+            )
+
             # Texto: Error, contrasena incorrecta
 
             self.contra_incorrecta = tk.Label(
-                self.pantalla, text='Error.\nContrasena incorrecta') 
+                self.pantalla, text='Error.\nContrasena incorrecta')
             self.contra_incorrecta.place(x=65, y=55)
             self.contra_incorrecta.config(
-                fg = '#003333', bg = 'deepskyblue',
-                font=('Libre-Baskerville', 16), bd = 4, relief='solid')
+                fg='#003333', bg='deepskyblue',
+                font=('Libre-Baskerville', 16), bd=4, relief='solid')
 
         elif tipo_acceso == 'nombre no registrado':
 
             # Actualizar puntero atras
 
-            self.puntero_atras = tk.Label(self.pantalla, text = '↤  Atras')
+            self.puntero_atras = tk.Label(self.pantalla, text='↤  Atras')
             self.puntero_atras.place(x=5, y=228)
             self.puntero_atras.config(
-                fg = '#003333', bg = 'deepskyblue',
-                font=('Libre-Baskerville', 14), bd = 4, relief='solid')
+                fg='#003333', bg='deepskyblue',
+                font=('Libre-Baskerville', 14), bd=4, relief='solid')
 
             # Actualizar boton atras
 
             self.boton_up3.config(
-                command=lambda: self.volver_inicio_sesion('nombre no registrado'))
+                command=lambda: self.volver_inicio_sesion
+                ('nombre no registrado')
+                )
 
             # Texto: Error, nombre incorrecto. NO registrado
 
             self.nombre_incorrecto = tk.Label(
-                self.pantalla, text='Error.\nNombre de usuario no registrado') 
+                self.pantalla, text='Error.\nNombre de usuario no registrado')
             self.nombre_incorrecto.place(x=6, y=55)
             self.nombre_incorrecto.config(
-                fg = '#003333', bg = 'deepskyblue',
-                font=('Libre-Baskerville', 16), bd = 4, relief='solid')
-
+                fg='#003333', bg='deepskyblue',
+                font=('Libre-Baskerville', 16), bd=4, relief='solid')
 
     def volver_inicio_sesion(self, tipo_devolucion):
 
         """
-        Metodo que se encarga de borrar distintas pantallas con 
-        el objetivo de volver a la pantalla 'inicio sesion' 
+        Metodo que se encarga de borrar distintas pantallas con
+        el objetivo de volver a la pantalla 'inicio sesion'
         """
 
         # Volver a inicio de sesion
@@ -587,7 +603,7 @@ class Cajero():
 
         self.puntero_atras.destroy()
 
-        # Deshebilitar botones 
+        # Deshebilitar botones
 
         self.boton_up3.config(command=self.deshabilitar_boton)
 
@@ -606,7 +622,7 @@ class Cajero():
 
             # volver a menu
 
-            self.iniciar_sesion() 
+            self.iniciar_sesion()
 
         elif tipo_devolucion == 'nombre no registrado':
 
@@ -616,14 +632,13 @@ class Cajero():
 
             # volver a menu
 
-            self.iniciar_sesion() 
-
+            self.iniciar_sesion()
 
     def menu(self):
 
         """
         Metodo que se encarga de mostrar la pantalla menu
-        Esta da las siguienbtes obciones: sacar fondos, 
+        Esta da las siguienbtes obciones: sacar fondos,
         consultar fondos y depositar fondos
         """
 
@@ -631,14 +646,14 @@ class Cajero():
 
         self.boton_up3.config(
             command=lambda: self.volver_inicio_sesion('contrasena correcta'))
-        
+
         # Texto: Menu
 
-        self.text_menu = tk.Label(self.pantalla, text='Menu') 
+        self.text_menu = tk.Label(self.pantalla, text='Menu')
         self.text_menu.place(x=159, y=15)
         self.text_menu.config(
-            fg = '#003333', bg = 'deepskyblue',
-            font=('Libre-Baskerville', 14), bd = 4, relief='solid')
+            fg='#003333', bg='deepskyblue',
+            font=('Libre-Baskerville', 14), bd=4, relief='solid')
 
         # Puntero: Ingrasar dinero a la cuenta
 
@@ -646,8 +661,8 @@ class Cajero():
             self.pantalla, text='Hacer deposito  ↦')
         self.puntero_agregar.place(x=199, y=125)
         self.puntero_agregar.config(
-            fg = '#003333', bg = 'deepskyblue',
-            font=('Libre-Baskerville', 14), bd = 4, relief='solid')
+            fg='#003333', bg='deepskyblue',
+            font=('Libre-Baskerville', 14), bd=4, relief='solid')
 
         # Puntero: Consultar fondos
 
@@ -655,8 +670,8 @@ class Cajero():
             self.pantalla, text='Consultar fondos  ↦')
         self.cons_fondos.place(x=180, y=222)
         self.cons_fondos.config(
-            fg = '#003333', bg = 'deepskyblue',
-            font=('Libre-Baskerville', 14), bd = 4, relief='solid')
+            fg='#003333', bg='deepskyblue',
+            font=('Libre-Baskerville', 14), bd=4, relief='solid')
 
         # Puntero: Sacar efectivo
 
@@ -664,25 +679,25 @@ class Cajero():
             self.pantalla, text='Sacar efectivo  ↦')
         self.sac_efectiuvo.place(x=206, y=327)
         self.sac_efectiuvo.config(
-            fg = '#003333', bg = 'deepskyblue',
-            font=('Libre-Baskerville', 14), bd = 4, relief='solid')
+            fg='#003333', bg='deepskyblue',
+            font=('Libre-Baskerville', 14), bd=4, relief='solid')
 
         # Puntero: Salir
 
         self.puntero_salir = tk.Label(self.pantalla, text='↤  Salir')
         self.puntero_salir.place(x=5, y=323)
         self.puntero_salir.config(
-            fg = '#003333', bg = 'red',
-            font=('Libre-Baskerville', 14), bd = 4, relief='solid')
+            fg='#003333', bg='red',
+            font=('Libre-Baskerville', 14), bd=4, relief='solid')
 
         # Puntero: Atras
 
         self.puntero_atras = tk.Label(
-            self.pantalla, text = '↤  Atras')
+            self.pantalla, text='↤  Atras')
         self.puntero_atras.place(x=5, y=228)
         self.puntero_atras.config(
-            fg = '#003333', bg = 'deepskyblue',
-            font=('Libre-Baskerville', 14), bd = 4, relief='solid')
+            fg='#003333', bg='deepskyblue',
+            font=('Libre-Baskerville', 14), bd=4, relief='solid')
 
         # Habilitar botones
 
@@ -690,12 +705,12 @@ class Cajero():
         self.boton_up7.config(command=self.consultar)
         self.boton_up8.config(command=self.sacar_fondos)
         self.boton_up4.config(command=self.ventana.destroy)
- 
+
     def sacar_fondos(self):
 
         """
         Metodo que se encarga de mostar la pantalla 'sacar fondos'.
-        Esta pregunta cuantos fondos se pretenden sacar 
+        Esta pregunta cuantos fondos se pretenden sacar
         """
 
         # Destruir pantalla menu
@@ -710,8 +725,8 @@ class Cajero():
             self.pantalla, text='Continuar  ↦')
         self.puntero_continuar_sac.place(x=245, y=323)
         self.puntero_continuar_sac.config(
-            fg = '#003333', bg = 'deepskyblue',
-            font=('Libre-Baskerville', 14), bd = 4, relief='solid')
+            fg='#003333', bg='deepskyblue',
+            font=('Libre-Baskerville', 14), bd=4, relief='solid')
 
         # Puntero: Atras
 
@@ -719,8 +734,8 @@ class Cajero():
             self.pantalla, text='↤  Atras')
         self.puntero_atras.place(x=5, y=323)
         self.puntero_atras.config(
-            fg = '#003333', bg = 'deepskyblue',
-            font=('Libre-Baskerville', 14), bd = 4, relief='solid')
+            fg='#003333', bg='deepskyblue',
+            font=('Libre-Baskerville', 14), bd=4, relief='solid')
 
         # Boton: Atras
 
@@ -732,15 +747,14 @@ class Cajero():
             self.pantalla, text='Cuanto dinero desea retirar?')
         self.text_fondos_retirar.place(x=55, y=100)
         self.text_fondos_retirar.config(
-            fg = '#003333', bg = 'deepskyblue',
-            font=('Libre-Baskerville', 14), bd = 4, relief='solid')
+            fg='#003333', bg='deepskyblue',
+            font=('Libre-Baskerville', 14), bd=4, relief='solid')
 
         # Texto/entrada: Monto por ingresar desde el teclado numerico
 
         self.caja_monto_sac = tk.Label(self.pantalla, width=20, height=2)
         self.caja_monto_sac.grid_propagate(False)
         self.caja_monto_sac.place(x=110, y=190)
-
 
         # Boton: Continuar. Retirar Fondos
 
@@ -749,7 +763,6 @@ class Cajero():
         # Habilitar teclado numerico
 
         self.habilitar_numerico('sacar')
-
 
     def volver_menu(self, pantalla):
 
@@ -765,19 +778,19 @@ class Cajero():
             self.text_monto_agregar.destroy()
 
             # Destruir punteros
-            
+
             self.puntero_atras.destroy()
             self.puntero_continuar_agr.destroy()
 
             # Destruir Texto/entrada
-        
+
             self.caja_monto_ing.destroy()
 
             # Deshabilitar teclado numerico
 
             self.deshabilitar_numerico()
 
-            # Deshabilitar boton atras  
+            # Deshabilitar boton atras
 
             self.boton_up4.config(command=self.deshabilitar_boton)
 
@@ -792,35 +805,34 @@ class Cajero():
             self.text_agregado.destroy()
 
             # Destruir punteros
-            
+
             self.puntero_atras.destroy()
 
-            # Deshabilitar boton atras  
+            # Deshabilitar boton atras
 
             self.boton_up4.config(command=self.deshabilitar_boton)
 
         elif pantalla == 'consultar':
 
-            # Destuir Labels 
+            # Destuir Labels
 
             self.Fondos_registrados.destroy()
 
             # Deshabilitar botones
-            
+
             self.boton_up4.config(command=self.deshabilitar_boton)
 
-            # Destruir punteros 
+            # Destruir punteros
 
             self.puntero_atras.destroy()
 
-        
         elif pantalla == 'sacar':
 
             # Deshabilitar teclado numerico
 
             self.deshabilitar_numerico()
 
-            # Destruir Labels 
+            # Destruir Labels
 
             self.text_fondos_retirar.destroy()
 
@@ -832,15 +844,15 @@ class Cajero():
             # Destruir Texto/entrada
 
             self.caja_monto_sac.destroy()
-            
+
             # Deshabilitar botones
 
             self.boton_up4.config(command=self.deshabilitar_boton)
             self.boton_up8.config(command=self.deshabilitar_boton)
 
         elif pantalla == 'retiro invalido. Mucho':
-            
-            # Destruir Labels 
+
+            # Destruir Labels
 
             self.text_no_agregado.destroy()
 
@@ -848,14 +860,13 @@ class Cajero():
 
             self.puntero_atras.destroy()
 
-            # Deshabilitar  
+            # Deshabilitar
 
             self.boton_up4.config(command=self.deshabilitar_boton)
 
-
         elif pantalla == 'fondos retirados':
 
-            # Destruir Labels 
+            # Destruir Labels
 
             self.text_agregado.destroy()
 
@@ -869,11 +880,10 @@ class Cajero():
 
         self.menu()
 
-
     def consultar(self):
 
         """
-        Metodo que se encarga de mostrar una 
+        Metodo que se encarga de mostrar una
         pantalla con la informacion del dinero
         remanente en la cuenta.
         """
@@ -888,7 +898,10 @@ class Cajero():
 
         self.puntero_atras = tk.Label(self.pantalla, text='↤  Atras')
         self.puntero_atras.place(x=5, y=323)
-        self.puntero_atras.config(fg = '#003333', bg = 'deepskyblue', font=('Libre-Baskerville', 14), bd = 4, relief='solid')
+        self.puntero_atras.config(
+            fg='#003333', bg='deepskyblue',
+            font=('Libre-Baskerville', 14), bd=4, relief='solid'
+            )
 
         # Boton: Atras
 
@@ -896,7 +909,9 @@ class Cajero():
 
         # Consultar fondos al servidor
 
-        self.socket.send_string('{}/{}'.format('Consultar', self.usuario_ini.get()))
+        self.socket.send_string(
+            '{}/{}'.format('Consultar', self.usuario_ini.get())
+        )
         mensaje = self.socket.recv().decode("utf-8")
 
         # Texto. Fondos
@@ -906,9 +921,8 @@ class Cajero():
             text='Sus fondos registrados son:\n{} Colones'.format(mensaje))
         self.Fondos_registrados.place(x=60, y=120)
         self.Fondos_registrados.config(
-            fg = '#003333', bg = 'deepskyblue',
-            font=('Libre-Baskerville', 14), bd = 4, relief='solid')
-    
+            fg='#003333', bg='deepskyblue',
+            font=('Libre-Baskerville', 14), bd=4, relief='solid')
 
     def depositar(self):
 
@@ -924,13 +938,13 @@ class Cajero():
         # Nueva pantalla
 
         # Texto: Ingrese el monto que desea agregar
-        
+
         self.text_monto_agregar = tk.Label(
             self.pantalla, text='Ingrese el monto que\ndesea agregar')
         self.text_monto_agregar.place(x=86, y=120)
         self.text_monto_agregar.config(
-            fg = '#003333', bg = 'deepskyblue',
-            font=('Libre-Baskerville', 14), bd = 4, relief='solid')
+            fg='#003333', bg='deepskyblue',
+            font=('Libre-Baskerville', 14), bd=4, relief='solid')
 
         # Puntero: Continuar. Agregar monto
 
@@ -938,23 +952,23 @@ class Cajero():
             self.pantalla, text='Continuar  ↦')
         self.puntero_continuar_agr.place(x=245, y=323)
         self.puntero_continuar_agr.config(
-            fg = '#003333', bg = 'deepskyblue',
-            font=('Libre-Baskerville', 14), bd = 4, relief='solid')
+            fg='#003333', bg='deepskyblue',
+            font=('Libre-Baskerville', 14), bd=4, relief='solid')
 
         # Puntero: Atras
         self.puntero_atras = tk.Label(self.pantalla, text='↤  Atras')
         self.puntero_atras.place(x=5, y=323)
         self.puntero_atras.config(
-            fg = '#003333', bg = 'deepskyblue',
-            font=('Libre-Baskerville', 14), bd = 4, relief='solid')
-        
+            fg='#003333', bg='deepskyblue',
+            font=('Libre-Baskerville', 14), bd=4, relief='solid')
+
         # Texto/entrada: Monto por ingresar desde el teclado numerico
 
         self.caja_monto_ing = tk.Label(
             self.pantalla, width=20, height=2)
         self.caja_monto_ing.grid_propagate(False)
         self.caja_monto_ing.place(x=110, y=190)
-        
+
         # Boton: Continuar. Agegar monto
 
         self.boton_up8.config(command=self.monto_agregado)
@@ -968,35 +982,31 @@ class Cajero():
 
         self.habilitar_numerico('Depositar')
 
-
     def monto_retirado(self):
 
         """
-        Metodo que se encarga de pretender sacar efectivo 
+        Metodo que se encarga de pretender sacar efectivo
         del bonco y de mostrar una pantalla de exito
         o error, al pretender hacer un retiro de efectivo
         """
 
         # Enviar monto al servidor
 
-
         self.socket.send_string(
             '{}/{}/{}'.format(
                 'Sacar', self.usuario_ini.get(), self.sacar_monto))
-        
+
         # Respuesta del servidor
 
         mensaje = self.socket.recv().decode("utf-8")
 
         if mensaje == 'Monto retirado':
 
-
-            # Deshabilitar teclado numerico 
+            # Deshabilitar teclado numerico
 
             self.deshabilitar_numerico()
 
             # Destruir Labels
-
 
             self.text_fondos_retirar.destroy()
 
@@ -1005,14 +1015,14 @@ class Cajero():
             self.caja_monto_sac.destroy()
 
             # Destruir punteros
-            
+
             self.puntero_continuar_sac.destroy()
 
             # Deshabilitar botones
 
             self.boton_up8.config(command=self.deshabilitar_boton)
 
-            # Nueva pagina 
+            # Nueva pagina
 
             # Actualizar boton atras
 
@@ -1025,18 +1035,16 @@ class Cajero():
                 self.pantalla, text='Monto retirado exitosamente')
             self.text_agregado.place(x=44, y=140)
             self.text_agregado.config(
-                fg = '#003333', bg = 'deepskyblue',
-                font=('Libre-Baskerville', 15), bd = 4, relief='solid')
-
+                fg='#003333', bg='deepskyblue',
+                font=('Libre-Baskerville', 15), bd=4, relief='solid')
 
         elif mensaje == 'mas de lo registrado':
-            
-            # Deshabilitar teclado numerico 
+
+            # Deshabilitar teclado numerico
 
             self.deshabilitar_numerico()
 
             # Destruir Labels
-
 
             self.text_fondos_retirar.destroy()
 
@@ -1052,7 +1060,7 @@ class Cajero():
 
             self.boton_up8.config(command=self.deshabilitar_boton)
 
-            # Nueva pagina 
+            # Nueva pagina
 
             # Actualizar boton atras
 
@@ -1065,12 +1073,11 @@ class Cajero():
                 self.pantalla, text='Error:\nMonto mayor a los fondos totales')
             self.text_no_agregado.place(x=19, y=140)
             self.text_no_agregado.config(
-                fg = '#003333', bg = 'deepskyblue',
-                font=('Libre-Baskerville', 15), bd = 4, relief='solid')
+                fg='#003333', bg='deepskyblue',
+                font=('Libre-Baskerville', 15), bd=4, relief='solid')
 
         elif mensaje == 'ValueError':
             pass
-
 
     def monto_agregado(self):
 
@@ -1086,7 +1093,7 @@ class Cajero():
 
         if mensaje == 'Monto anadido':
 
-            # Deshabilitar teclado numerico 
+            # Deshabilitar teclado numerico
 
             self.deshabilitar_numerico()
 
@@ -1099,24 +1106,31 @@ class Cajero():
             self.caja_monto_ing.destroy()
 
             # Destruir punteros
-            
+
             self.puntero_continuar_agr.destroy()
 
             # Deshabilitar botones
 
             self.boton_up8.config(command=self.deshabilitar_boton)
 
-            # Nueva pagina 
+            # Nueva pagina
 
             # Actualizar boton atras
 
-            self.boton_up4.config(command=lambda: self.volver_menu('monto_agregado'))
+            self.boton_up4.config(
+                command=lambda: self.volver_menu('monto_agregado')
+            )
 
             # Texto: Monto agregado exitosamente
 
-            self.text_agregado = tk.Label(self.pantalla, text='Monto agregado exitosamente')
+            self.text_agregado = tk.Label(
+                self.pantalla, text='Monto agregado exitosamente'
+            )
             self.text_agregado.place(x=32, y=140)
-            self.text_agregado.config(fg = '#003333', bg = 'deepskyblue', font=('Libre-Baskerville', 15), bd = 4, relief='solid')
+            self.text_agregado.config(
+                fg='#003333', bg='deepskyblue',
+                font=('Libre-Baskerville', 15), bd=4, relief='solid'
+            )
 
         elif mensaje == 'ValueError':
             pass
@@ -1147,12 +1161,11 @@ class Cajero():
         self.boton_up4.config(command=self.deshabilitar_boton)
         self.boton_up3.config(command=self.deshabilitar_boton)
 
-
     def habilitar_numerico(self, opcion):
 
         """
         Metodo que se encarga de habilitar el teclado numero
-        y de nombrar distintos string que guardaran la informacion 
+        y de nombrar distintos string que guardaran la informacion
         digitada en el teclado numerico
         """
 
@@ -1161,7 +1174,7 @@ class Cajero():
         self.sacar_monto = ''
 
         self.agregar_monto = ''
-            
+
         self.contra_inicio = ''
 
         self.saldo_inicial = ''
@@ -1175,34 +1188,32 @@ class Cajero():
         self.boton_under7.config(command=lambda: self.tec_num('7', opcion))
         self.boton_under8.config(command=lambda: self.tec_num('8', opcion))
         self.boton_under9.config(command=lambda: self.tec_num('9', opcion))
-        self.boton_under10.config(command=lambda: self.tec_num('', opcion, True))
+        self.boton_under10.config(
+            command=lambda: self.tec_num('', opcion, True)
+        )
         self.boton_under11.config(command=lambda: self.tec_num('0', opcion))
 
-        
     def tec_num(self, numero, objetivo, borrar=False):
 
         """
-        Metodo que se encarga de eligir a cual string 
-        se anade la informacion digitada en el teclado 
+        Metodo que se encarga de eligir a cual string
+        se anade la informacion digitada en el teclado
         numerico o borrarla
         """
 
         # Escribir en pantalla lo seleccionado en el tecclado numerico
 
         if borrar:
-                self.saldo_inicial = ''
-                self.contra_inicio = ''
-                self.agregar_monto = ''
-                self.sacar_monto = ''
-
+            self.saldo_inicial = ''
+            self.contra_inicio = ''
+            self.agregar_monto = ''
+            self.sacar_monto = ''
 
         if objetivo == 'Registro':
             self.saldo_inicial += numero
 
             self.boton_under12.config(command=self.agregar_usuario)
             self.caja_numeros.config(text=self.saldo_inicial)
-            
-            
 
         elif objetivo == 'Inicio':
             self.contra_inicio += numero
@@ -1222,7 +1233,6 @@ class Cajero():
             self.boton_under12.config(command=self.monto_retirado)
             self.caja_monto_sac.config(text=self.sacar_monto)
 
-
     def volver_inicio(self, pantalla):
 
         """
@@ -1239,11 +1249,10 @@ class Cajero():
             self.text_contra.destroy()
             self.puntero_atras.destroy()
 
-
             # Desabilitar botones
 
-            self.boton_up1.config(command = self.deshabilitar_boton)
-            self.boton_up5.config(command = self.deshabilitar_boton)
+            self.boton_up1.config(command=self.deshabilitar_boton)
+            self.boton_up5.config(command=self.deshabilitar_boton)
 
         elif pantalla == 'registrar':
 
@@ -1263,8 +1272,8 @@ class Cajero():
 
             # Deshabilitar botones
 
-            self.boton_up1.config(command = self.deshabilitar_boton)
-            self.boton_up5.config(command = self.deshabilitar_boton)
+            self.boton_up1.config(command=self.deshabilitar_boton)
+            self.boton_up5.config(command=self.deshabilitar_boton)
             self.deshabilitar_numerico()
 
         elif pantalla == 'agregar_usuario. Error':
@@ -1276,8 +1285,8 @@ class Cajero():
 
             # Desabilitar botones
 
-            self.boton_up1.config(command = self.deshabilitar_boton)
-            self.boton_up5.config(command = self.deshabilitar_boton)
+            self.boton_up1.config(command=self.deshabilitar_boton)
+            self.boton_up5.config(command=self.deshabilitar_boton)
 
         elif pantalla == 'Inicio_sesion':
 
@@ -1286,8 +1295,8 @@ class Cajero():
             self.text_iniciar_sesion.destroy()
             self.text_usuario_ini.destroy()
             self.text_contra_ini.destroy()
-            
-            # Destruir punteros 
+
+            # Destruir punteros
 
             self.puntero_continuar_ini.destroy()
             self.puntero_atras.destroy()
@@ -1296,7 +1305,7 @@ class Cajero():
 
             self.entrada_usuario_ini.destroy()
 
-            # Deshabilitar botones 
+            # Deshabilitar botones
 
             self.boton_up1.config(command=self.deshabilitar_boton)
             self.boton_up5.config(command=self.deshabilitar_boton)
@@ -1334,7 +1343,6 @@ class Cajero():
         self.boton_under11.config(command=self.deshabilitar_boton)
         self.boton_under12.config(command=self.deshabilitar_boton)
 
-
     def agregar_usuario(self):
 
         """
@@ -1344,13 +1352,13 @@ class Cajero():
 
         # Deshabilitar botones
 
-        self.boton_up5.config(command = self.deshabilitar_boton)
+        self.boton_up5.config(command=self.deshabilitar_boton)
         self.deshabilitar_numerico()
 
         # Actualizar boton Atras
 
         self.boton_up1.config(
-            command = lambda: self.volver_inicio('agregar_usuario'))
+            command=lambda: self.volver_inicio('agregar_usuario'))
 
         # Destruir labels
 
@@ -1374,37 +1382,32 @@ class Cajero():
                 # self.socket.send_string('Registrar/' + self.usuario.get())
                 # self.mensaje = self.socket.recv().decode('utf-8')
 
-                # Conteseña
+                # Contraseña
 
                 contra = str(randint(1000, 9999))
 
-                
-                # Guardar datos en el servidor 
+                # Guardar datos en el servidor
 
-                self.socket.send_string(
-                    '{}/{}/{}/{}'.format('Registrar', self.usuario.get(), contra, self.saldo_inicial))
+                self.socket.send_string('{}/{}/{}/{}'.format('Registrar', self.usuario.get(), contra, self.saldo_inicial))
                 mensaje = self.socket.recv().decode("utf-8")
-                
+
                 # Error, Nombre de usuario ya rejgstrado
-                
+
                 if mensaje == 'Rechasado':
 
                     # Labels
 
                     # Texto: Nombre invalido
 
-                    self.invalido = tk.Label(
-                        self.pantalla,
-                        text='Nombre de usuario invalido.\nEse nombre ya ha sido registrado') 
+                    self.invalido = tk.Label(self.pantalla, text='Nombre de usuario invalido.\nEse nombre ya ha sido registrado')
                     self.invalido.place(x=3, y=130)
                     self.invalido.config(
-                        fg = '#003333', bg = 'deepskyblue',
-                        font=('Libre-Baskerville', 16), bd = 4, relief='solid')
+                        fg='#003333', bg='deepskyblue',
+                        font=('Libre-Baskerville', 16), bd=4, relief='solid')
 
                     # Actualizar boton Atras
 
-                    self.boton_up1.config(
-                    command = lambda: self.volver_inicio('agregar_usuario. Error'))
+                    self.boton_up1.config(command=lambda: self.volver_inicio('agregar_usuario. Error'))
 
                 else:
                     # Labels
@@ -1413,30 +1416,30 @@ class Cajero():
 
                     self.text_registro_exitoso = tk.Label(
                         self.pantalla,
-                        text = 'Registro Exitoso\nDebe recordar los siguientes '
+                        text='Registro Exitoso\nDebe recordar los siguientes '
                         'datos\npara poder iniciar seción')
-                    self.text_registro_exitoso.place(x = 30, y = 100)
+                    self.text_registro_exitoso.place(x=30, y=100)
                     self.text_registro_exitoso.config(
-                        fg = '#003333', bg = 'deepskyblue',
-                        font=('Libre-Baskerville', 13), bd = 4, relief='solid')
+                        fg='#003333', bg='deepskyblue',
+                        font=('Libre-Baskerville', 13), bd=4, relief='solid')
 
                     # Texto: Nombre de usuario
 
                     self.text_nuevo_usuario = tk.Label(
-                        self.pantalla, text = 'Nombre de usuario: {}'.format(
+                        self.pantalla, text='Nombre de usuario: {}'.format(
                             self.usuario.get()))
                     self.text_nuevo_usuario.place(x=30, y=200)
                     self.text_nuevo_usuario.config(
-                        fg = '#003333', bg='deepskyblue',
+                        fg='#003333', bg='deepskyblue',
                         font=('Libre-Baskerville', 13), bd=4, relief='solid')
 
                     # Texto contraseña
 
                     self.text_contra = tk.Label(
-                        self.pantalla, text = 'Contraseña: {}'.format(contra))
-                    self.text_contra.place(x = 30, y = 250)
+                        self.pantalla, text='Contraseña: {}'.format(contra))
+                    self.text_contra.place(x=30, y=250)
                     self.text_contra.config(
-                        fg = '#003333', bg = 'deepskyblue',
+                        fg='#003333', bg='deepskyblue',
                         font=('Libre-Baskerville', 13), bd=4, relief='solid')
 
             else:
