@@ -1,9 +1,9 @@
 # PROYECTO-PYTHON-CAJERO-AUTOMATICO
 
 Integrantes:
-Isaac Damían Campos Montero-C11571
-Sebastián Jesús Fallas Fallas-12765
-Steven Gerardo Chacón Salazar-12023
+1. Isaac Damían Campos Montero-C11571
+2. Sebastián Jesús Fallas Fallas-12765
+3. Steven Gerardo Chacón Salazar-12023
 
 El presente repositorio corresponde a la creación de un sistema de cajero automático, el cual por medio de sockets es capaz
 de almacenar información en un servidor local, el usuario tiene la posibilidad de realizar diferentes acciones:
@@ -13,6 +13,7 @@ de almacenar información en un servidor local, el usuario tiene la posibilidad 
 3) Mostrar el estado de movimiento de la cuenta cliente.
 4) Información del cliente.
 5) Salir
+
 
 ***Sobre Este Repositorio***
 
@@ -49,7 +50,9 @@ Respecto a las funciones integradas:
 
 5) Salir
 
--El programa tiene la capacidad si el usuario lo desea de poder salir del programa de cajero al presionar un botón.
+-El programa tiene la capacidad si el usuario lo desea de poder salir del programa de cajero al presionar un botón, en este caso el programa se cierra.
+
+
 
 
 ***Requisitos***
@@ -98,6 +101,7 @@ Para instalar esta librería se deben ejecutar los siguientes comandos:
 sudo apt update
 sudo apt install python3-json
 ```
+
 
 **CARPETAS:
 1. INTERFAZ GRAFICA DE USUARIO  
