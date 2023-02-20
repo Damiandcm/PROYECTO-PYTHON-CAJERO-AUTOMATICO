@@ -1,18 +1,15 @@
 #!/usr/bin/python3
 
-import json
-import pygame, sys, time
+import pygame
+import time
 import tkinter as tk
-from pygame.locals import *
-from tkinter import ttk
 from random import randint
-from time import sleep
 import zmq
 
 
 class Cajero():
     """
-`   Clase cajero, se encarga de producir la interfas y todas sus funciones
+    Clase cajero, se encarga de producir la interfas y todas sus funciones
     """
 
     def __init__(self):
@@ -24,7 +21,7 @@ class Cajero():
         # Contexto. Conectar socket
         self.context = zmq.Context()
         self.socket = self.context.socket(zmq.REQ)
-        self.socket.connect('tcp://10.0.2.4:5555')
+        self.socket.connect('tcp://10.0.2.15:5555')
 
         # Ventana principal
 
@@ -187,7 +184,7 @@ class Cajero():
             # este se ejecuta al principio y da un sonido
             # de bienvenida:
 
-            intro = pygame.mixer.music.load(
+            pygame.mixer.music.load(
                 'y2mate.com - sonido de inicio de windows 7.mp3')
             pygame.mixer.music.play(2)
 
@@ -198,20 +195,9 @@ class Cajero():
             # este se ejecuta al principio y da un mensaje de
             # bienvenida a los clientes y da indicaciones:
 
-            escena = pygame.mixer.music.load('bienvenida.mp3')
+            pygame.mixer.music.load('bienvenida.mp3')
             pygame.mixer.music.play(0)
             pygame.mixer.music.set_volume(0.5)
-
-        elif sonido == 'Espera':
-
-            # Sonido de espera, al abrir el programa,
-            # este se ejecuta al principio y funciona
-            # como bucle infinito, hasta que el usuario
-            # cierre la ventana:
-
-            pygame.mixer.music.load('espera.mp3')
-            pygame.mixer.music.play(-1)
-            pygame.mixer.music.set_volume(0.1)
 
     def inicio(self):
 
@@ -1088,7 +1074,8 @@ class Cajero():
 
         # Enviar monto al servidor
 
-        self.socket.send_string('{}/{}/{}'.format('Agregar', self.usuario_ini.get(), self.agregar_monto))
+        self.socket.send_string('{}/{}/{}'.format(
+            'Agregar', self.usuario_ini.get(), self.agregar_monto))
         mensaje = self.socket.recv().decode("utf-8")
 
         if mensaje == 'Monto anadido':
@@ -1377,7 +1364,8 @@ class Cajero():
 
         try:
             saldo_inicial = int(self.saldo_inicial)
-            if ' ' not in self.usuario.get() and self.usuario.get() != '' and saldo_inicial >= 5000:
+            if (' ' not in self.usuario.get()) and (
+                    self.usuario.get() != '') and (saldo_inicial >= 5000):
 
                 # self.socket.send_string('Registrar/' + self.usuario.get())
                 # self.mensaje = self.socket.recv().decode('utf-8')
@@ -1388,7 +1376,10 @@ class Cajero():
 
                 # Guardar datos en el servidor
 
-                self.socket.send_string('{}/{}/{}/{}'.format('Registrar', self.usuario.get(), contra, self.saldo_inicial))
+                self.socket.send_string('{}/{}/{}/{}'.format(
+                    'Registrar', self.usuario.get(),
+                    contra, self.saldo_inicial))
+
                 mensaje = self.socket.recv().decode("utf-8")
 
                 # Error, Nombre de usuario ya rejgstrado
@@ -1399,7 +1390,10 @@ class Cajero():
 
                     # Texto: Nombre invalido
 
-                    self.invalido = tk.Label(self.pantalla, text='Nombre de usuario invalido.\nEse nombre ya ha sido registrado')
+                    self.invalido = tk.Label(
+                        self.pantalla,
+                        text='Nombre de usuario invalido.\nEse'
+                        ' nombre ya ha sido registrado')
                     self.invalido.place(x=3, y=130)
                     self.invalido.config(
                         fg='#003333', bg='deepskyblue',
@@ -1407,7 +1401,8 @@ class Cajero():
 
                     # Actualizar boton Atras
 
-                    self.boton_up1.config(command=lambda: self.volver_inicio('agregar_usuario. Error'))
+                    self.boton_up1.config(command=lambda: self.volver_inicio(
+                        'agregar_usuario. Error'))
 
                 else:
                     # Labels
