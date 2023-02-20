@@ -1,9 +1,9 @@
 # PROYECTO-PYTHON-CAJERO-AUTOMATICO
 
 Integrantes:
-1. Isaac Damían Campos Montero-C11571
-2. Sebastián Jesús Fallas Fallas-12765
-3. Steven Gerardo Chacón Salazar-12023
+1. Isaac Damían Campos Montero - C11571
+2. Sebastián Jesús Fallas Fallas - C12765
+3. Steven Gerardo Chacón Salazar -  C12023
 
 El presente repositorio corresponde a la creación de un sistema de cajero automático, el cual por medio de sockets es capaz
 de almacenar información en un servidor local, el usuario tiene la posibilidad de realizar diferentes acciones:
